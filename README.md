@@ -3,9 +3,9 @@ final project of si507, Pokemon teammate finder
 
 ## Files
 ### project_final_data.py
-This file contains the code of data processing. I used Beautifulsoup to scrap a page from https://www.smogon.com/ and requests package. 
+This file contains the code of data processing. 
+I used Beautifulsoup to scrap a page from https://www.smogon.com/ and requests package. No api key is needed. 
 csv files are all downloaded from https://www.kaggle.com/, json files are downloaded from https://www.smogon.com/.
-No api key is needed. 
 I process the data source seperately and store them into my computer, so there may be some duplicate code. You can find the raw data and modified data in this repo.
 
 ### project_final_play.py
@@ -20,6 +20,11 @@ gen8vgc2021series11-1760.json : 291 Pokemon data in VGC battle in Pokemon showdo
 ### final modified data
 pokename.json: a list of all Pokemon species
 pokepair.json: a dictionary of Pokemon data and the recommend teammates
+
+## Data structure
+My data are in a graph. Each Pokémon species is a node. If this species is not frequently used in battles, or not suitable for a new battle player, I will not put it into my graph. 
+Then if two species are suitable to be put in one team (judged by some conditions), these two nodes will be connected. 
+The final modified data is pokepair.json which stores the pokemon data and recommended teammates.
 
 
 
